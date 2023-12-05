@@ -18,7 +18,6 @@ package com.google.android.horologist.compose.material
 
 import android.R
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.outlined.VolumeDown
 import androidx.compose.material.icons.filled.Image
 import androidx.compose.material.icons.materialPath
 import androidx.compose.material.icons.outlined.VolumeDown
@@ -360,6 +359,7 @@ class ChipTest : ScreenshotBaseTest() {
     fun withIconMirrored() {
         screenshotTestRule.setContent(isComponent = true, takeScreenshot = true) {
             CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
+                @Suppress("Deprecation")
                 Chip(
                     label = "Primary label",
                     onClick = { },
